@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+service VideoStreamingService {
+    rpc StreamVideo (stream VideoFrame) returns (VideoResponse) {}
+}
+
+message VideoFrame {
+    bytes frame = 1;
+}
+
+message VideoResponse {
+    string message = 1;
+}
